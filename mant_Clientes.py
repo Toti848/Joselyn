@@ -12,7 +12,7 @@ from Elementos import ClienteBO
 class Directorio_C: 
 
     def __init__(self):
-
+ 
         #Pantalla
         self.raiz = Tk()
         self.raiz.title ("Mantenimiento de Clientes")
@@ -29,6 +29,7 @@ class Directorio_C:
         mantmenu.add_command(label="Facturas", command=self.abrir_F)
         mantmenu.add_command(label="Articulos", command=self.abrir_A)
         mantmenu.add_command(label="Proveedores", command=self.abrir_p)
+        mantmenu.add_command(label="Conexion", command=self.abrir_R)
 
         menubar.add_cascade(label="Archivo", menu=filemenu)
         menubar.add_cascade(label="Mantenimiento", menu=mantmenu)
@@ -249,6 +250,11 @@ class Directorio_C:
         from mant_Proveedor import Directorio_P
         self.raiz.destroy()
         Directorio_P()
+    
+    def abrir_R(self):
+        from mant_RelacionAP import Conexion_AP
+        self.raiz.destroy()
+        Conexion_AP()
 
 def main():
     Directorio_C()
@@ -256,4 +262,3 @@ def main():
 
 if __name__ == "__main__": 
     main()
-
